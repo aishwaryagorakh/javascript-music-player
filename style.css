@@ -1,0 +1,193 @@
+:root .dark-theme{
+    --primary-color: black;
+    --secondary-color:grey; 
+}
+
+body .dark-theme{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--primary-color); 
+    color:white;
+   
+}
+
+
+
+
+:root{
+    --primary-color: rgb(23, 183, 211);;
+    --secondary-color: #008CBA;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--primary-color); 
+    color:white;
+   
+}
+
+
+
+.dark-theme{
+    --primary-color: black;
+       --secondary-color:grey; 
+   
+   }
+
+
+.theme-toggle{
+    width: 50%;
+    height: 4rem;  
+    /* border: 2px solid red; */
+}
+
+.toggle-label{
+    width: 3rem;
+    height: 2rem;
+    background-color:rgb(34, 30, 238);
+    border-radius: 9rem;
+    display: inline-block;
+    position: relative;
+}
+#checkbox{
+    visibility: hidden;
+}
+.toggle-ball{
+    position: absolute;
+    width: 1.5rem;
+    height: 2rem;
+   /* border: 2px solid black; */
+    border-radius: 50%;
+    background-color: white;
+    transition: all .2s linear;
+}
+#checkbox:checked + .toggle-label .toggle-ball{
+    
+    transform: translatex(2rem);
+}
+.main{
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* border: 2px solid yellow; */
+}
+.songs-section{
+    background-color: var(--primary-color);
+    width: 30%;
+    box-shadow: 0 1em 2em rgba(0,0,0,0.3);
+    height: 100%;
+    /* border: 2px solid rgb(203, 30, 59); */
+}
+#music-player{
+    background-color:var(--primary-color);
+    width: 40%;
+    height: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #008CBA;
+    box-shadow: 0 1em 2em rgba(0,0,0,0.3);
+}
+#song-info{
+    width: 100%;
+   border-radius: 20px;
+    background-color: var(--secondary-color)
+}
+
+#song-info img{
+   margin-top: 2rem;
+   margin-left: 40px;
+}
+#song-info #artist{
+    height: 2rem;
+    background-color: var(--secondary-color);
+    margin-left: 2rem;
+}
+
+#song-info #song-name{
+    height: 2rem;
+    background-color:var(--secondary-color);
+    margin-left: 2rem;
+}
+
+#audio{
+   margin-left: 5rem;
+}
+#prev-btn{
+        background-color: var(--secondary-color);
+        border: none;
+        color: white;
+        padding: 15px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;  
+}
+#next-btn{
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;  
+}
+
+#add-btn{
+    color: white;
+    background-color:var(--secondary-color);
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.playlist-section{
+    box-shadow: 0 1em 2em rgba(0,0,0,0.3);
+    background-color: var(--primary-color);
+    width: 30%;
+    height: 100%;
+    /* border: 2px solid rgb(21, 22, 129); */
+   
+}
+
+#songList li{
+    padding: 10px 10px;
+    border-radius: 20px;
+    text-align: center;
+background-color:var(--secondary-color);
+
+margin-top: 1rem;
+    list-style-type:circle;
+    border: 2px solid var(--secondary-color);
+    color: white;
+    margin-right: 30px;
+    cursor: pointer;
+    text-decoration: solid;
+    text-align: center;
+}
+#genreSelect{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+}
+#genreSelect:hover  {
+    background-color: rgb(135, 119, 119);
+}
+#playlistName{
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+#playListbtn{
+    color: white;
+    background-color:var(--secondary-color);
+    border: none;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

@@ -5,7 +5,7 @@ const songs = [
       genre: "Pop",
       image: "allofme.jpg",
        duration: 248 ,
-       source:"song1.mp3"
+       source:"audio1.mp3"
     },
     { 
         id:12,
@@ -14,7 +14,7 @@ const songs = [
      genre: "Pop",
      image:"dispacho.jpg",
       duration: 279 ,
-      source:"song1.mp3"
+      source:"audio7.mp3"
     },
     
     { id:13,
@@ -23,7 +23,7 @@ const songs = [
      image:"someone.jpg",
      genre: "Pop",
       duration: 285 ,
-      source:"song1.mp3"
+      source:"audio77.mp3"
     
     },
     {
@@ -33,7 +33,7 @@ const songs = [
       image:"triller.jpg",
       genre: "Pop",
       duration: 357,
-      source:"song1.mp3"
+      source:"audio4.mp3"
     },
     {
         id:15,
@@ -42,7 +42,7 @@ const songs = [
       image:"BohemianRhapsody.jpg",
       genre: "Rock",
       duration: 354,
-      source:"song1.mp3"
+      source:"audio5.mp3"
     },
     {
         id:16,
@@ -51,16 +51,16 @@ const songs = [
       image:"StairwaytoHeaven.jpg",
       genre: "Rock",
       duration: 480,
-      source:"song1.mp3"
+      source:"audio6.mp3"
     },
     {
-        id:16,
+        id:116,
       title: "Sweet Child O' Mine",
       artist: "Guns N' Roses",
       image:"SweetChildO'Mine.jpg",
       genre: "Rock",
       duration: 355,
-      source:"song1.mp3"
+      source:"audio7.mp3"
     },
     {
         id:17,
@@ -69,7 +69,7 @@ const songs = [
       artist: "Nirvana",
       genre: "Rock",
       duration: 302,
-      source:"song1.mp3"
+      source:"audio8.mp3"
     },
     {
         id:18,
@@ -78,7 +78,7 @@ const songs = [
       artist: "Eagles",
       genre: "hip-hop",
       duration: 390,
-      source:"song1.mp3"
+      source:"audio9.mp3"
     },
     {
         id:19,
@@ -87,10 +87,12 @@ const songs = [
       artist: "Against Me!",
       genre: "hip-hop",
       duration: 292,
-      source:"song1.mp3"
+      source:"audio10.mp3"
     },
     
   ];
+
+  // toggle section
 
  const toggleBtn=document.querySelector('#checkbox');
 
@@ -107,7 +109,9 @@ const songs = [
 
 
   const cplaylist=[];
+
 //   all song section
+
   function filterSongs() {
     const selectedGenre = document.getElementById('genreSelect').value;
     const filteredSongs =
@@ -170,6 +174,7 @@ const songs = [
    
       loadSong(songs[currentSongIndex]);
 
+      //  playlist section
 
       function createPlaylist()
       {
@@ -206,117 +211,4 @@ function addInsidePlaylist()
 }
 
 
-
-
-// let abc =document.getElementsByClassName("newDiv");
-//   let songName=document.getElementById('song-name');
-//   let insidePara=document.createElement('p');
-//   insidePara.className="insidePara";
-//   var sn = songName.innerText.toString();
-//   insidePara.textContent=sn;
-//   abc.appendChild(insidePara);
-//   playlistContainer.appendChild(abc);
-
-
-      // const playlists = [];
-      
-      // function createPlaylist() {
-      //   const playlistNameInput = document.getElementById('songSearch');
-      //   const playlistName = playlistNameInput.value.trim();
-      
-      //   if (playlistName !== '') {
-      //     const playlist = {
-      //       name: playlistName,
-      //       songs: [],
-      //     };
-      
-      //     playlists.push(playlist);
-      //     displayPlaylists();
-      //   }
-      
-      //   playlistNameInput.value = ''; // Clear input field after creating playlist
-      // }
-      
-      // function addToPlaylist() {
-      //   const selectedPlaylistElement = document.getElementById('playlistSongs');
-      //   const selectedPlayList=Array.from(selectedPlaylistElement.children).indexOf(event.target);
-      //   const selectedSong = songs[currentSongIndex];
-      
-      //   if (selectedPlaylistIndex !== undefined) {
-      //     playlists[selectedPlaylistIndex].songs.push(selectedSong.title);
-      //     displayPlaylists();
-      //   }
-      // }
-      
-      // function displayPlaylists() {
-      //   const playlistSection = document.getElementById('playlistSongs');
-      //   playlistSection.innerHTML = '';
-      
-      //   playlists.forEach((playlist, index) => {
-      //     const playlistDiv = document.createElement('div');
-      //     playlistDiv.textContent = playlist.name;
-      
-      //     playlistDiv.addEventListener('click', () => {
-      //       // Implement logic to load and display songs of the selected playlist
-      //       console.log(`Displaying songs of playlist: ${playlist.name}`);
-      //     });
-      
-      //     playlistSection.appendChild(playlistDiv);
-      //   });
-      // }
-      
-      // // Attach event listeners
-      // document.getElementById('createPlaylist').addEventListener('click', createPlaylist);
-      // document.getElementById('add-btn').addEventListener('click', addToPlaylist);
-
-
-
-// function addToPlaylist(){
-
-
-  //     // for(var i=0;i<10; i++)
-  //     // {
-  //       // debugger;
-  //       // if(!document.getElementById("PlayList"+i.toString()))
-  //       // {
-  //         let playListSong=document.getElementById('playlistSongs');
-  //         //let createPlaylist=document.getElementById('createPlaylist');
-  //         let songSearch=document.getElementById('songSearch');
-  //         if(songSearch.value.trim() !== "")
-  //         {
-  //         let unorderList=document.createElement('ul');
-  //         unorderList.textContent=songSearch.value;
-  //         unorderList.className= "song-list";
-  //        // unorderList.id="PlayList"+i.toString();
-  //         unorderList.style.fontSize = "25px";
-  //         unorderList.addEventListener("click",GetClickedPlayListItem)
-  //         playListSong.appendChild(unorderList);
-
-  //         songSearch.value = "";
-  //         }
-       
-  //     }
-  //    }
-  // }
-
-  // function callMe(){
-  //   debugger;
-  //   var ulList=document.getElementById('PlayList1');
-  //   let songName=document.getElementById('song-name');
-  //   var sn = songName.innerText.toString();
-  //   var li = document.createElement("li");
-  //   li.style.fontSize = "20px";
-  //   li.textContent = sn;
-  
-  //   ulList.appendChild(li);
-  // }
-
-  // addBtn.addEventListener('click',callMe);
-
-  // const selectedPlayList = "";
-  // function GetClickedPlayListItem()
-  // {
-    
-
-  // }
 

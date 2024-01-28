@@ -181,10 +181,10 @@ const songs = [
           let newDiv=document.createElement('div');
           newDiv.className='newDiv';
           
-          let h3=document.createElement('h3');
-          h3.className='h3';
-          h3.textContent=playlistName.value;
-          newDiv.appendChild(h3);
+          let addToListbutton=document.createElement('button');
+          addToListbutton.className='addToList';
+          addToListbutton.textContent=playlistName.value;
+          newDiv.appendChild(addToListbutton);
           playlistContainer.appendChild(newDiv);
           playlistName.value='';
         }
@@ -194,13 +194,28 @@ const songs = [
       playListbtn.addEventListener('click',createPlaylist);
       
 
+function addInsidePlaylist()
+{
+  let playlistContainer=document.getElementById('playlistContainer');
+  let playlistDiv=document.createElement('div');
+  playlistDiv.className="playlistDiv";
+  var sn=songName.innerHTML.toString();
+  playlistDiv.textContent=sn;
+  playlistContainer.appendChild(playlistDiv);
+
+}
 
 
 
 
-
-
-
+// let abc =document.getElementsByClassName("newDiv");
+//   let songName=document.getElementById('song-name');
+//   let insidePara=document.createElement('p');
+//   insidePara.className="insidePara";
+//   var sn = songName.innerText.toString();
+//   insidePara.textContent=sn;
+//   abc.appendChild(insidePara);
+//   playlistContainer.appendChild(abc);
 
 
       // const playlists = [];

@@ -5,7 +5,7 @@ const songs = [
       genre: "Pop",
       image: "allofme.jpg",
        duration: 248 ,
-       source:"audio1.mp3"
+       source:"audio/audio1.mp3"
     },
     { 
         id:12,
@@ -14,7 +14,7 @@ const songs = [
      genre: "Pop",
      image:"dispacho.jpg",
       duration: 279 ,
-      source:"audio7.mp3"
+      source:"audio/audio7.mp3"
     },
     
     { id:13,
@@ -23,7 +23,7 @@ const songs = [
      image:"someone.jpg",
      genre: "Pop",
       duration: 285 ,
-      source:"audio77.mp3"
+      source:"audio/audio77.mp3"
     
     },
     {
@@ -33,7 +33,7 @@ const songs = [
       image:"triller.jpg",
       genre: "Pop",
       duration: 357,
-      source:"audio4.mp3"
+      source:"audio/audio4.mp3"
     },
     {
         id:15,
@@ -42,7 +42,7 @@ const songs = [
       image:"BohemianRhapsody.jpg",
       genre: "Rock",
       duration: 354,
-      source:"audio5.mp3"
+      source:"audio/audio5.mp3"
     },
     {
         id:16,
@@ -51,7 +51,7 @@ const songs = [
       image:"StairwaytoHeaven.jpg",
       genre: "Rock",
       duration: 480,
-      source:"audio6.mp3"
+      source:"audio/audio6.mp3"
     },
     {
         id:116,
@@ -60,7 +60,7 @@ const songs = [
       image:"SweetChildO'Mine.jpg",
       genre: "Rock",
       duration: 355,
-      source:"audio7.mp3"
+      source:"audio/audio7.mp3"
     },
     {
         id:17,
@@ -69,7 +69,7 @@ const songs = [
       artist: "Nirvana",
       genre: "Rock",
       duration: 302,
-      source:"audio8.mp3"
+      source:"audio/audio8.mp3"
     },
     {
         id:18,
@@ -78,7 +78,7 @@ const songs = [
       artist: "Eagles",
       genre: "hip-hop",
       duration: 390,
-      source:"audio9.mp3"
+      source:"audio/audio9.mp3"
     },
     {
         id:19,
@@ -87,7 +87,7 @@ const songs = [
       artist: "Against Me!",
       genre: "hip-hop",
       duration: 292,
-      source:"audio10.mp3"
+      source:"audio/audio10.mp3"
     },
     
   ];

@@ -177,38 +177,110 @@ const songs = [
       //  playlist section
 
       function createPlaylist()
-      {
-        let playlistContainer=document.getElementById('playlistContainer');
-        let playlistName=document.getElementById("playlistName");
+       {
+         let playlistContainer=document.getElementById('playlistContainer');
+         let playlistName=document.getElementById("playlistName");
+         let abc=playlistName.value;
         if(playlistName.value.trim()!=="")
         {
           
-          let newDiv=document.createElement('div');
-          newDiv.className='newDiv';
-          
-          let addToListbutton=document.createElement('button');
-          addToListbutton.className='addToList';
-          addToListbutton.textContent=playlistName.value;
-          newDiv.appendChild(addToListbutton);
-          playlistContainer.appendChild(newDiv);
-          playlistName.value='';
-        }
+          const playlistElement = document.createElement('div');
+          playlistElement.classList.add('playlist');
+          playlistElement.innerHTML = `
+              <h3>${abc}</h3>
+              <ul class="playlist-songs"></ul>
+              <button class="delete-btn">Delete Playlist</button>
+          `;
+          playlistContainer.appendChild(playlistElement);
 
-      }
-        
-      playListbtn.addEventListener('click',createPlaylist);
-      
+          savePlaylists();
 
-function addInsidePlaylist()
-{
-  let playlistContainer=document.getElementById('playlistContainer');
-  let playlistDiv=document.createElement('div');
-  playlistDiv.className="playlistDiv";
-  var sn=songName.innerHTML.toString();
-  playlistDiv.textContent=sn;
-  playlistContainer.appendChild(playlistDiv);
+          playlistName.value="";
 
+
+     }}
+
+  function  savePlaylists(){
+    let playlists=document.querySelectorAll('.playlist h3');
+    playlistArray=Array.from(playlists).map(playlist=>playlist.textContent);
+    localStorage.setItem('playlists',JSON.stringify(playlistArray));
+  }
+
+  function loadPlaylists() {
+    const savedPlaylists = JSON.parse(localStorage.getItem('playlists'));
+    if (savedPlaylists) {
+        savedPlaylists.forEach(playlistName => {
+            const playlistElement = document.createElement('div');
+            playlistElement.classList.add('playlist');
+            playlistElement.innerHTML = `
+                <h3>${playlistName}</h3>
+                <ul class="playlist-songs"></ul>
+                <button class="delete-btn">Delete Playlist</button>
+            `;
+            playlistContainer.appendChild(playlistElement);
+        });
+    }
 }
+
+
+window.addEventListener('load', loadPlaylists);
+
+// Function to delete playlist
+function deletePlaylist(event) {
+  const playlistElement = event.target.closest('.playlist');
+  if (playlistElement) {
+      playlistElement.remove();
+      savePlaylists();
+  }
+}
+
+// Event listener for deleting playlist
+playlistContainer.addEventListener('click', function(event) {
+  if (event.target.classList.contains('delete-btn')) {
+      deletePlaylist(event);
+  }
+});
+
+// Function to add current song to selected playlist
+function addToPlaylist() {
+  const selectedPlaylist = prompt('Select a playlist to add the song to:');
+  if (selectedPlaylist === null) return; // User clicked cancel
+
+  // Find the playlist element
+  const playlistElements = document.querySelectorAll('.playlist h3');
+  let playlistElement;
+  for (let i = 0; i < playlistElements.length; i++) {
+      if (playlistElements[i].textContent === selectedPlaylist) {
+          playlistElement = playlistElements[i].parentNode;
+          break;
+      }
+  }
+
+  if (!playlistElement) {
+      alert('Playlist not found!');
+      return;
+  }
+
+  // Add the song to the selected playlist
+  const songTitle = songs[currentSongIndex].title;
+  const songArtist = songs[currentSongIndex].artist;
+  const playlistSongs = playlistElement.querySelector('.playlist-songs');
+  const li = document.createElement('li');
+  li.textContent = `${songTitle} - ${songArtist}`;
+  playlistSongs.appendChild(li);
+
+  // Save playlists to local storage
+  savePlaylists();
+}
+
+// Attach event listeners to each "Add to Playlist" button
+const addToPlaylistButtons = document.querySelectorAll('.add-to-playlist-btn');
+addToPlaylistButtons.forEach(button => {
+  button.addEventListener('click', addToPlaylist);
+});
+
+
+
 
 
 
